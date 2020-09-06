@@ -1,6 +1,6 @@
 # Getting started
 
-fezefzefezfez
+Ceci est la documentation en rapport avec QCore.
 
 ## How to Build
 
@@ -13,7 +13,7 @@ To check if node and npm have been successfully installed, write the following c
 * `node --version`
 * `npm -version`
 
-![Version Check](https://apidocs.io/illustration/nodejs?step=versionCheck&workspaceFolder=QCORE%20server-Node)
+![Version Check](https://apidocs.io/illustration/nodejs?step=versionCheck&workspaceFolder=QCORE%20Api-Node)
 
 Now use npm to resolve all dependencies by running the following command in the root directory (of the SDK folder):
 
@@ -21,13 +21,13 @@ Now use npm to resolve all dependencies by running the following command in the 
 npm install
 ```
 
-![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency1&workspaceFolder=QCORE%20server-Node)
+![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency1&workspaceFolder=QCORE%20Api-Node)
 
 ![Resolve Dependencies](https://apidocs.io/illustration/nodejs?step=resolveDependency2)
 
 This will install all dependencies in the `node_modules` folder.
 
-Once dependencies are resolved, you will need to move the folder `QCOREServerLib ` in to your `node_modules` folder.
+Once dependencies are resolved, you will need to move the folder `QCOREApiLib ` in to your `node_modules` folder.
 
 ## How to Use
 
@@ -42,7 +42,7 @@ Click on `File` and select `Open Folder`.
 
 Select the folder of your SDK and click on `Select Folder` to open it up in Sublime Text. The folder will become visible in the bar on the left.
 
-![Open Project](https://apidocs.io/illustration/nodejs?step=openProject&workspaceFolder=QCORE%20server-Node)
+![Open Project](https://apidocs.io/illustration/nodejs?step=openProject&workspaceFolder=QCORE%20Api-Node)
 
 ### 2. Creating a Test File
 
@@ -54,9 +54,9 @@ var lib = require('lib');
 
 Save changes.
 
-![Create new file](https://apidocs.io/illustration/nodejs?step=createNewFile&workspaceFolder=QCORE%20server-Node)
+![Create new file](https://apidocs.io/illustration/nodejs?step=createNewFile&workspaceFolder=QCORE%20Api-Node)
 
-![Save new file](https://apidocs.io/illustration/nodejs?step=saveNewFile&workspaceFolder=QCORE%20server-Node)
+![Save new file](https://apidocs.io/illustration/nodejs?step=saveNewFile&workspaceFolder=QCORE%20Api-Node)
 
 ### 3. Running The Test File
 
@@ -66,7 +66,7 @@ To run the `index.js` file, open up the command prompt and navigate to the Path 
 node index.js
 ```
 
-![Run file](https://apidocs.io/illustration/nodejs?step=runProject&workspaceFolder=QCORE%20server-Node)
+![Run file](https://apidocs.io/illustration/nodejs?step=runProject&workspaceFolder=QCORE%20Api-Node)
 
 
 ## How to Test
@@ -87,11 +87,11 @@ Tests can be run in a number of ways:
 ### Method 3 (Run specific controller's tests)
 
 1. Navigate to the `../test/Controllers/` directory from command prompt.
-2. Type `mocha  QCORE serverController`  to run all the tests in that controller file.
+2. Type `mocha  QCORE ApiController`  to run all the tests in that controller file.
 
 > To increase mocha's default timeout, you can change the `TEST_TIMEOUT` parameter's value in `TestBootstrap.js`.
 
-![Run Tests](https://apidocs.io/illustration/nodejs?step=runTests&controllerName=QCORE%20serverController)
+![Run Tests](https://apidocs.io/illustration/nodejs?step=runTests&controllerName=QCORE%20ApiController)
 
 ## Initialization
 
@@ -112,6 +112,7 @@ const lib = require('lib');
 ## <a name="list_of_controllers"></a>List of Controllers
 
 * [ServersController](#servers_controller)
+* [QCoreMinecraftController](#q_core_minecraft_controller)
 
 ## <a name="servers_controller"></a>![Class: ](https://apidocs.io/img/class.png ".ServersController") ServersController
 
@@ -123,7 +124,7 @@ The singleton instance of the ``` ServersController ``` class can be accessed fr
 var controller = lib.ServersController;
 ```
 
-### <a name="get_servers_list"></a>![Method: ](https://apidocs.io/img/method.png ".ServersController.getServersList") getServersList
+### <a name="listes_les_servers_de_l_utilisateur_connect_s"></a>![Method: ](https://apidocs.io/img/method.png ".ServersController.listesLesServersDeLUtilisateurConnectS") listesLesServersDeLUtilisateurConnectS
 
 > *Tags:*  ``` Skips Authentication ``` 
 
@@ -131,7 +132,7 @@ var controller = lib.ServersController;
 
 
 ```javascript
-function getServersList(authorization, callback)
+function listesLesServersDeLUtilisateurConnectS(authorization, callback)
 ```
 #### Parameters
 
@@ -147,7 +148,7 @@ function getServersList(authorization, callback)
 
     var authorization = '7ljr0lDUETeCWbPDJLOuFUkPmr42';
 
-    controller.getServersList(authorization, function(error, response, context) {
+    controller.listesLesServersDeLUtilisateurConnectS(authorization, function(error, response, context) {
 
     
     });
@@ -155,7 +156,7 @@ function getServersList(authorization, callback)
 
 
 
-### <a name="get_boot_server"></a>![Method: ](https://apidocs.io/img/method.png ".ServersController.getBootServer") getBootServer
+### <a name="get_allume_un_serveur"></a>![Method: ](https://apidocs.io/img/method.png ".ServersController.getAllumeUnServeur") getAllumeUnServeur
 
 > *Tags:*  ``` Skips Authentication ``` 
 
@@ -163,7 +164,7 @@ function getServersList(authorization, callback)
 
 
 ```javascript
-function getBootServer(id, authorization, callback)
+function getAllumeUnServeur(id, authorization, callback)
 ```
 #### Parameters
 
@@ -181,7 +182,7 @@ function getBootServer(id, authorization, callback)
     var id = 21945158;
     var authorization = '7ljr0lDUETeCWbPDJLOuFUkPmr42';
 
-    controller.getBootServer(id, authorization, function(error, response, context) {
+    controller.getAllumeUnServeur(id, authorization, function(error, response, context) {
 
     
     });
@@ -189,7 +190,7 @@ function getBootServer(id, authorization, callback)
 
 
 
-### <a name="get_server_show"></a>![Method: ](https://apidocs.io/img/method.png ".ServersController.getServerShow") getServerShow
+### <a name="get_linode_servers_show"></a>![Method: ](https://apidocs.io/img/method.png ".ServersController.getLinodeServersShow") getLinodeServersShow
 
 > *Tags:*  ``` Skips Authentication ``` 
 
@@ -197,7 +198,7 @@ function getBootServer(id, authorization, callback)
 
 
 ```javascript
-function getServerShow(id, authorization, callback)
+function getLinodeServersShow(id, authorization, callback)
 ```
 #### Parameters
 
@@ -215,7 +216,7 @@ function getServerShow(id, authorization, callback)
     var id = 21945288;
     var authorization = '7ljr0lDUETeCWbPDJLOuFUkPmr42';
 
-    controller.getServerShow(id, authorization, function(error, response, context) {
+    controller.getLinodeServersShow(id, authorization, function(error, response, context) {
 
     
     });
@@ -223,7 +224,7 @@ function getServerShow(id, authorization, callback)
 
 
 
-### <a name="get_stop_server"></a>![Method: ](https://apidocs.io/img/method.png ".ServersController.getStopServer") getStopServer
+### <a name="get_stop_un_serveur"></a>![Method: ](https://apidocs.io/img/method.png ".ServersController.getStopUnServeur") getStopUnServeur
 
 > *Tags:*  ``` Skips Authentication ``` 
 
@@ -231,7 +232,7 @@ function getServerShow(id, authorization, callback)
 
 
 ```javascript
-function getStopServer(id, authorization, callback)
+function getStopUnServeur(id, authorization, callback)
 ```
 #### Parameters
 
@@ -249,7 +250,7 @@ function getStopServer(id, authorization, callback)
     var id = 21945288;
     var authorization = '7ljr0lDUETeCWbPDJLOuFUkPmr42';
 
-    controller.getStopServer(id, authorization, function(error, response, context) {
+    controller.getStopUnServeur(id, authorization, function(error, response, context) {
 
     
     });
@@ -257,7 +258,7 @@ function getStopServer(id, authorization, callback)
 
 
 
-### <a name="get_base_status"></a>![Method: ](https://apidocs.io/img/method.png ".ServersController.getBaseStatus") getBaseStatus
+### <a name="get_base_linode_api"></a>![Method: ](https://apidocs.io/img/method.png ".ServersController.getBaseLinodeApi") getBaseLinodeApi
 
 > *Tags:*  ``` Skips Authentication ``` 
 
@@ -265,7 +266,7 @@ function getStopServer(id, authorization, callback)
 
 
 ```javascript
-function getBaseStatus(authorization, callback)
+function getBaseLinodeApi(authorization, callback)
 ```
 #### Parameters
 
@@ -281,7 +282,121 @@ function getBaseStatus(authorization, callback)
 
     var authorization = '7ljr0lDUETeCWbPDJLOuFUkPmr42';
 
-    controller.getBaseStatus(authorization, function(error, response, context) {
+    controller.getBaseLinodeApi(authorization, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+[Back to List of Controllers](#list_of_controllers)
+
+## <a name="q_core_minecraft_controller"></a>![Class: ](https://apidocs.io/img/class.png ".QCoreMinecraftController") QCoreMinecraftController
+
+### Get singleton instance
+
+The singleton instance of the ``` QCoreMinecraftController ``` class can be accessed from the API Client.
+
+```javascript
+var controller = lib.QCoreMinecraftController;
+```
+
+### <a name="create_mc_start"></a>![Method: ](https://apidocs.io/img/method.png ".QCoreMinecraftController.createMcStart") createMcStart
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Launch a minecraft server
+
+
+```javascript
+function createMcStart(authorization, serverId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | TODO: Add a parameter description |
+| serverId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var authorization = '7ljr0lDUETeCWbPDJLOuFUkPmr42';
+    var serverId = 21945504;
+
+    controller.createMcStart(authorization, serverId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_mc_stop"></a>![Method: ](https://apidocs.io/img/method.png ".QCoreMinecraftController.createMcStop") createMcStop
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> Stop a minecraft server
+
+
+```javascript
+function createMcStop(authorization, serverId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | TODO: Add a parameter description |
+| serverId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var authorization = '7ljr0lDUETeCWbPDJLOuFUkPmr42';
+    var serverId = 21945504;
+
+    controller.createMcStop(authorization, serverId, function(error, response, context) {
+
+    
+    });
+```
+
+
+
+### <a name="create_mc_details"></a>![Method: ](https://apidocs.io/img/method.png ".QCoreMinecraftController.createMcDetails") createMcDetails
+
+> *Tags:*  ``` Skips Authentication ``` 
+
+> get details about a minecraft
+
+
+```javascript
+function createMcDetails(authorization, serverId, callback)
+```
+#### Parameters
+
+| Parameter | Tags | Description |
+|-----------|------|-------------|
+| authorization |  ``` Required ```  | TODO: Add a parameter description |
+| serverId |  ``` Required ```  | TODO: Add a parameter description |
+
+
+
+#### Example Usage
+
+```javascript
+
+    var authorization = '7ljr0lDUETeCWbPDJLOuFUkPmr42';
+    var serverId = 21945504;
+
+    controller.createMcDetails(authorization, serverId, function(error, response, context) {
 
     
     });
